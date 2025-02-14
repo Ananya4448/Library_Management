@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Book</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        h1 {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+        }
+        form {
+            background: white;
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Edit Book</h1>
+    <form action="/edit/{{ book[0] }}" method="POST">
+        <input type="text" name="title" value="{{ book[1] }}" required>
+        <input type="text" name="author" value="{{ book[2] }}" required>
+        <input type="date" name="published_date" value="{{ book[3] }}" required>
+        <input type="text" name="publication" value="{{ book[4] }}" required>
+        <button type="submit">Update Book</button>
+    </form>
+</body>
+</html>
